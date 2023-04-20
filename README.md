@@ -26,8 +26,7 @@ License:
 This project was created solely for testing technical and challenging skills, and it has no other purpose.
 
 
-
-react-challenge
+![image](https://user-images.githubusercontent.com/78564842/233499351-ba2c54b0-20b2-4e6a-8260-85f5f6106780.png)
 
 Credits:
 Conteo provided the activity to develop this project, and credits go to them.
