@@ -3,6 +3,8 @@ Title: React Product Visor
 Deployment (Vercel)
 Check the demo: 
 https://react-product-visor-demo.vercel.app/
+
+
 Introduction:
 
 Welcome to my React product viewer app! This app is designed to help you easily create and manage a list of products. With its intuitive interface, you can quickly add new products and store them in a list for easy access later on.
