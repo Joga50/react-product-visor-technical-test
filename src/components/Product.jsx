@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
+
+
 function Product(props) {
   const { product, removeProduct } = props;
   const [isFav, setIsFav] = useState(false);
@@ -27,7 +29,7 @@ function Product(props) {
   };
 
   return (
-    <div>
+    <div className="product-card">
       <h2>{product.nombre}</h2>
       <p>Código: {product.codigo}</p>
       <p>Descripción: {product.descripcion}</p>
@@ -35,33 +37,33 @@ function Product(props) {
       <p>Fecha de creación: {product.creacion}</p>
       {isFav ? (
         <button
-          style={{ backgroundColor: "rgb(133, 182, 225)" }}
+          className="fav-button"
           onClick={() => {
             localStorage.removeItem(`favorites_${product.codigo}`);
             setIsFav(false);
           }}
-          className="favButton"
         >
           <FontAwesomeIcon
             icon={faStar}
-            style={{ color: "yellow", height: "15px" }}
+            className="fav-icon"
+            style={{ color: "yellow" }}
           />
         </button>
       ) : (
         <button
-          style={{ backgroundColor: "rgb(133, 182, 225)" }}
+          className="fav-button"
           onClick={addFav}
-          className="favButton"
         >
           <FontAwesomeIcon
             icon={faStar}
-            style={{ color: "white", height: "15px" }}
+            className="fav-icon"
+            style={{ color: "white" }}
           />
         </button>
       )}
-      <button onClick={handleRemove}>Remove Product</button>
+      <button className="remove-button" onClick={handleRemove}>Eliminar producto.</button>
     </div>
   );
 }
 
-export default Product
+export default Product;

@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 .nav{
@@ -23,19 +22,23 @@
   border: none;
   border-radius: 0.5em;
 }
+
 footer {
   display: flex;
   justify-content: center;
   text-align: center;
  
 
-  margin-top: 100px;
+  margin-top: auto;
   width: 100%;
-  height: auto;
+  height: 50px;
   padding-top: 23px;
   padding-bottom: 23px;
-  background-color: #121010ce;
+  background-color: rgb(151, 147, 147);
 }
+
+
+
 .dark{
   background-color: #121010ce;
   color: white;
@@ -155,7 +158,20 @@ nav {
   align-items: center;
   padding: 10px;
 }
-
+.button {
+  background: linear-gradient(to bottom, #e5cd8f, #df6418);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  width: 90%;
+  max-width: 350px;
+  height: auto;
+  margin: 10px;
+}
 nav ul {
   list-style: none;
   display: flex;
@@ -170,4 +186,48 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
+}
+
+/* PRODUCT CARD  */
+.product-card {
+  border: 2px solid rgb(133, 182, 225);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fav-button {
+  background-color: rgb(133, 182, 225);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fav-button:hover {
+  background-color: #6ba1d6;
+}
+
+.fav-icon {
+  height: 20px;
+}
+
+.remove-button {
+  background-color: #ff6961;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #ff4242;
 }

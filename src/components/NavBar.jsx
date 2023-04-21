@@ -3,41 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
 import { ContextGlobal } from "../context/context";
-import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-
-const NavWrapper = styled(AppBar)(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
-    flexDirection: "column",
-    alignItems: "center"
-  },
-}));
-
-const NavItemsWrapper = styled(Toolbar)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  [theme.breakpoints.down('sm')]: {
-    width: "100%",
-    padding: 0,
-  },
-}));
-
-const NavMenuWrapper = styled('ul')(({ theme }) => ({
-  listStyle: 'none',
-  margin: 0,
-  padding: 0,
-  display: 'flex',
-  alignItems: 'center',
-  '& li': {
-    margin: '0 20px',
-    [theme.breakpoints.down('sm')]: {
-      margin: '10px 0',
-    },
-  },
-}));
 
 function Navbar() {
   const { theme, setTheme } = useContext(ContextGlobal);
@@ -47,30 +16,26 @@ function Navbar() {
   }
 
   return (
-    <NavWrapper position="static">
-      <NavItemsWrapper>
-        <Link to="/">
-          <Button color="inherit" variant="text">Home</Button>
-        </Link>
-        <NavMenuWrapper>
-          <li>
-            <Link to="/myproducts">
-              <Button color="inherit" variant="text">Mis Productos</Button>
-            </Link>
-          </li>
-          <li>
-            <IconButton onClick={toggleTheme} color="inherit">
-              {theme === "light" ? (
-                <FontAwesomeIcon icon={faMoon} style={{color: "white"}} />
-              ) : (
-                <FontAwesomeIcon icon={faSun} style={{color: "white"}} />
-              )}
-            </IconButton>
-          </li>
-        </NavMenuWrapper>
-      </NavItemsWrapper>
-    </NavWrapper>
+    <AppBar position="static" sx={{ backgroundColor: theme === "light" ? "#fff" : "#333" }} style={{ position: "relative"}}>
+    <Toolbar>
+      <Link to="/">
+        <Button className="button" color="inherit" variant="text" sx={{ color: theme === "light" ? "#333" : "#fff" }}>Home</Button>
+      </Link>
+      <div style={{ flex: 1 }}></div>
+      <Link to="/myproducts">
+        <Button color="inherit" variant="text" sx={{ color: theme === "light" ? "#333" : "#fff" }}>Mis Productos</Button>
+      </Link>
+      <IconButton onClick={toggleTheme} color="inherit" sx={{ color: "#fff" }}>
+        {theme === "light" ? (
+          <FontAwesomeIcon icon={faMoon} style={{color: "#333"}} />
+        ) : (
+          <FontAwesomeIcon icon={faSun} />
+        )}
+      </IconButton>
+    </Toolbar>
+  </AppBar>
   );
 }
 
 export default Navbar;
+

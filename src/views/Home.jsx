@@ -1,15 +1,12 @@
 import React, { useReducer, useContext, useState } from "react";
 import ProductForm from "../components/ProductForm";
-import ProductList from "../components/ProductList";
 import { ContextGlobal } from "../context/context";
 import { ADD_PRODUCT, addProductReducer } from "../reducers/reducers";
 import { Link } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const Heading = styled(Typography)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
-}));
+
 
 const SuccessMessage = styled("div")(({ theme }) => ({
   color: theme.palette.success.main,
@@ -35,19 +32,20 @@ function Home() {
     setShowSuccessMessage(true);
     setTimeout(() => {
       setShowSuccessMessage(false);
-    }, 25000); // Hide the message after 5 seconds
+    }, 25000);
   };
 
   return (
-    <HomeContainer maxWidth="md" sx={{ backgroundColor: theme === "dark" ? "#333" : "#fff" }}>
-      <Heading variant="h5">Bienvenido al creador de productos. En la siguiente sección, podrás crear un producto con las características especificadas en el formulario. Recuerda que para administrar tus productos, debes ir a la sección de "Mis productos" una vez hayas creado tu producto</Heading>
-      <Heading variant="h4">Create a new product</Heading>
+    <HomeContainer maxWidth="md"  >
+     
+      <h4 style={{fontWeight: "normal", padding: "30px"}}>Bienvenido al creador de productos. En la siguiente sección, podrás crear un producto con las características especificadas en el formulario. Recuerda que para administrar tus productos, debes ir a la sección de "Mis productos" una vez hayas creado tu producto</h4>
+ 
 
       {showSuccessMessage && (
         <SuccessMessage>
-          <Typography>Your object has been created. Go to My Products to manage your products.</Typography>
+          <Typography>Tu producto ha sido creado satisfactoriamente. Dirigete a la Pagina de productos para administrar tus productos creados.</Typography>
           <Link to="/myproducts">
-            <Typography variant="h6">Click here to go to My Products</Typography>
+            <Typography variant="h6">Click aqui para ir a MIS PRODUCTOS</Typography>
           </Link>
         </SuccessMessage>
       )}

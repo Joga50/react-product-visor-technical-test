@@ -6,7 +6,6 @@ export const ContextGlobal = React.createContext({
 });
 
 export const ContextProvider = ({ children }) => {
-    //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
 
   const [theme, setTheme] = useState('light');
 

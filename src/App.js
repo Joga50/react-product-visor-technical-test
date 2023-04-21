@@ -6,7 +6,6 @@ import "./App.css"
 import {ContextProvider, ContextGlobal } from "./context/context"
 
 import React, {  useContext} from "react";
-import Footer from "./components/Footer.jsx";
 
 function App() {
   const { theme } = useContext(ContextGlobal);
@@ -21,7 +20,7 @@ function App() {
       <Route path='/myproducts' element={<MyProducts />} />
      
     </Routes>
-   <Footer />
+  
 </div>
 </ContextProvider>
   );
